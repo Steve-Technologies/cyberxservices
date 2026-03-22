@@ -238,50 +238,40 @@ export default function Index() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="flex items-center gap-2"
-            >
+            <div className="flex items-center gap-2">
               <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
                 <Shield className="w-5 h-5 text-primary-foreground" />
               </div>
               <span className="font-bold text-lg text-foreground">
                 CyberX Services
               </span>
-            </motion.div>
+            </div>
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center gap-8">
               {["Services", "About", "Team", "Contact"].map((item, i) => (
-                <motion.button
+                <button
                   key={i}
                   onClick={() =>
                     scrollToSection(item.toLowerCase())
                   }
                   className="text-sm hover:text-primary transition relative group"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
                 >
                   {item}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary group-hover:w-full transition-all duration-300" />
-                </motion.button>
+                </button>
               ))}
             </div>
 
             {/* CTA Button */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="hidden md:block"
-            >
+            <div className="hidden md:block">
               <Button
                 onClick={() => scrollToSection("contact")}
                 className="bg-secondary hover:bg-secondary/90"
               >
                 Get Started
               </Button>
-            </motion.div>
+            </div>
 
             {/* Mobile Menu Button */}
             <button
@@ -294,11 +284,7 @@ export default function Index() {
 
           {/* Mobile Menu */}
           {mobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="md:hidden pb-4 border-t border-border mt-4 pt-4"
-            >
+            <div className="md:hidden pb-4 border-t border-border mt-4 pt-4">
               {["Services", "About", "Team", "Contact"].map((item, i) => (
                 <button
                   key={i}
@@ -314,7 +300,7 @@ export default function Index() {
               >
                 Get Started
               </Button>
-            </motion.div>
+            </div>
           )}
         </div>
       </nav>
@@ -972,31 +958,25 @@ export default function Index() {
                 <h3 className="font-semibold mb-4">Follow Us</h3>
                 <div className="flex gap-4">
                   {[Facebook, Linkedin, Twitter, Instagram].map((Icon, i) => (
-                    <motion.a
+                    <a
                       key={i}
                       href="#"
-                      className="w-10 h-10 bg-card border border-border rounded-lg flex items-center justify-center hover:border-primary transition"
-                      whileHover={{ scale: 1.2, rotate: 10 }}
-                      whileTap={{ scale: 0.9 }}
+                      className="w-10 h-10 bg-card border border-border rounded-lg flex items-center justify-center hover:border-primary hover:scale-110 hover:rotate-10 transition transform"
                     >
                       <Icon className="w-5 h-5" />
-                    </motion.a>
+                    </a>
                   ))}
                 </div>
               </motion.div>
             </div>
 
             {/* Contact Form */}
-            <motion.form
+            <form
               onSubmit={(e) => {
                 e.preventDefault();
                 handleWhatsAppSubmit();
               }}
               className="bg-card border border-border rounded-lg p-8"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
             >
               <div className="space-y-6">
                 {[
@@ -1046,17 +1026,15 @@ export default function Index() {
                   />
                 </motion.div>
 
-                <motion.button
+                <button
                   type="submit"
-                  className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+                  className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition hover:scale-102 active:scale-98 transform"
                 >
                   <Send className="w-4 h-4" />
                   Send via WhatsApp
-                </motion.button>
+                </button>
               </div>
-            </motion.form>
+            </form>
           </motion.div>
         </div>
       </section>
@@ -1113,13 +1091,12 @@ export default function Index() {
                 <ul className="space-y-2 text-muted-foreground text-sm">
                   {col.links.map((link, j) => (
                     <li key={j}>
-                      <motion.a
+                      <a
                         href="#"
                         className="hover:text-primary transition"
-                        whileHover={{ x: 5 }}
                       >
                         {link}
-                      </motion.a>
+                      </a>
                     </li>
                   ))}
                 </ul>
