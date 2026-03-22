@@ -21,6 +21,18 @@ import {
   Activity,
   AlertTriangle,
   CheckCircle,
+  Database,
+  Settings,
+  Key,
+  Server,
+  Wifi,
+  Eye,
+  Terminal,
+  GitBranch,
+  HardDrive,
+  Network,
+  Cpu,
+  Cable,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -317,8 +329,8 @@ export default function Index() {
               backgroundImage: `url('https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1600&h=900&fit=crop')`,
             }}
           />
-          <div className="absolute inset-0 bg-background/85 mix-blend-multiply" />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-background/80" />
+          <div className="absolute inset-0 bg-background/60 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-background/50 to-background/60" />
         </div>
 
         {/* Floating Cybersecurity Icons */}
@@ -348,7 +360,7 @@ export default function Index() {
           animate={{ y: [0, -25, 0], rotate: [0, 8, -8, 0] }}
           transition={{ duration: 5.5, repeat: Infinity }}
         >
-          <AlertTriangle className="w-18 h-18" />
+          <AlertTriangle className="w-16 h-16" />
         </motion.div>
         <motion.div
           className="absolute bottom-20 right-1/3 text-primary/40 opacity-60"
@@ -363,6 +375,62 @@ export default function Index() {
           transition={{ duration: 5.2, repeat: Infinity }}
         >
           <Cloud className="w-14 h-14" />
+        </motion.div>
+        <motion.div
+          className="absolute top-1/4 left-1/3 text-primary/40 opacity-60"
+          animate={{ y: [0, 20, 0], rotate: [0, -8, 8, 0] }}
+          transition={{ duration: 4.8, repeat: Infinity }}
+        >
+          <Database className="w-14 h-14" />
+        </motion.div>
+        <motion.div
+          className="absolute bottom-1/3 right-1/4 text-secondary/40 opacity-60"
+          animate={{ y: [0, -15, 0], x: [0, 12, 0] }}
+          transition={{ duration: 5.3, repeat: Infinity }}
+        >
+          <Key className="w-14 h-14" />
+        </motion.div>
+        <motion.div
+          className="absolute top-1/2 left-1/6 text-primary/40 opacity-60"
+          animate={{ y: [0, 22, 0], rotate: [0, 5, -5, 0] }}
+          transition={{ duration: 4.6, repeat: Infinity }}
+        >
+          <Server className="w-12 h-12" />
+        </motion.div>
+        <motion.div
+          className="absolute bottom-1/4 left-1/2 text-secondary/40 opacity-60"
+          animate={{ y: [0, -18, 0], x: [0, -10, 0] }}
+          transition={{ duration: 5.1, repeat: Infinity }}
+        >
+          <Network className="w-14 h-14" />
+        </motion.div>
+        <motion.div
+          className="absolute top-1/3 right-1/3 text-primary/40 opacity-60"
+          animate={{ y: [0, 18, 0], rotate: [0, -7, 7, 0] }}
+          transition={{ duration: 4.7, repeat: Infinity }}
+        >
+          <Eye className="w-12 h-12" />
+        </motion.div>
+        <motion.div
+          className="absolute bottom-2/3 right-1/6 text-secondary/40 opacity-60"
+          animate={{ y: [0, -22, 0], rotate: [0, 6, -6, 0] }}
+          transition={{ duration: 5.4, repeat: Infinity }}
+        >
+          <Terminal className="w-12 h-12" />
+        </motion.div>
+        <motion.div
+          className="absolute top-2/3 right-1/3 text-primary/40 opacity-60"
+          animate={{ y: [0, 20, 0], x: [0, 15, 0] }}
+          transition={{ duration: 4.9, repeat: Infinity }}
+        >
+          <Cpu className="w-12 h-12" />
+        </motion.div>
+        <motion.div
+          className="absolute bottom-1/3 left-1/3 text-secondary/40 opacity-60"
+          animate={{ y: [0, -20, 0], rotate: [0, -5, 5, 0] }}
+          transition={{ duration: 5.2, repeat: Infinity }}
+        >
+          <HardDrive className="w-14 h-14" />
         </motion.div>
 
         {/* Animated background elements */}
