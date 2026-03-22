@@ -57,6 +57,11 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        cyber: {
+          blue: "#2563EB",
+          red: "#EF4444",
+          dark: "#0F172A",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -80,10 +85,15 @@ export default {
             height: "0",
           },
         },
+        "glow": {
+          "0%, 100%": { opacity: "0.5" },
+          "50%": { opacity: "1" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "glow": "glow 3s ease-in-out infinite",
       },
     },
   },
