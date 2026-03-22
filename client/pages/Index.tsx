@@ -314,21 +314,65 @@ export default function Index() {
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: `url('https://images.unsplash.com/photo-1555949519-2f4938deafad?w=1600&h=900&fit=crop')`,
+              backgroundImage: `url('https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1600&h=900&fit=crop')`,
             }}
           />
           <div className="absolute inset-0 bg-background/85 mix-blend-multiply" />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background/70" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-background/80" />
         </div>
+
+        {/* Floating Cybersecurity Icons */}
+        <motion.div
+          className="absolute top-20 left-12 text-primary/40 opacity-60"
+          animate={{ y: [0, -30, 0], rotate: [0, 5, -5, 0] }}
+          transition={{ duration: 4, repeat: Infinity }}
+        >
+          <Shield className="w-20 h-20" />
+        </motion.div>
+        <motion.div
+          className="absolute top-40 right-16 text-secondary/40 opacity-60"
+          animate={{ y: [0, 20, 0], rotate: [0, -5, 5, 0] }}
+          transition={{ duration: 5, repeat: Infinity }}
+        >
+          <Lock className="w-16 h-16" />
+        </motion.div>
+        <motion.div
+          className="absolute bottom-32 left-1/4 text-primary/40 opacity-60"
+          animate={{ y: [0, 25, 0], x: [0, 10, 0] }}
+          transition={{ duration: 4.5, repeat: Infinity }}
+        >
+          <Code2 className="w-14 h-14" />
+        </motion.div>
+        <motion.div
+          className="absolute top-1/3 right-1/4 text-secondary/40 opacity-60"
+          animate={{ y: [0, -25, 0], rotate: [0, 8, -8, 0] }}
+          transition={{ duration: 5.5, repeat: Infinity }}
+        >
+          <AlertTriangle className="w-18 h-18" />
+        </motion.div>
+        <motion.div
+          className="absolute bottom-20 right-1/3 text-primary/40 opacity-60"
+          animate={{ y: [0, 15, 0], x: [0, -15, 0] }}
+          transition={{ duration: 4.2, repeat: Infinity }}
+        >
+          <Zap className="w-16 h-16" />
+        </motion.div>
+        <motion.div
+          className="absolute top-2/3 left-1/3 text-secondary/40 opacity-60"
+          animate={{ y: [0, -20, 0], rotate: [0, -6, 6, 0] }}
+          transition={{ duration: 5.2, repeat: Infinity }}
+        >
+          <Cloud className="w-14 h-14" />
+        </motion.div>
 
         {/* Animated background elements */}
         <motion.div
-          className="absolute top-20 left-10 w-72 h-72 bg-secondary/10 rounded-full blur-3xl"
+          className="absolute top-20 left-10 w-72 h-72 bg-secondary/5 rounded-full blur-3xl"
           animate={{ y: [0, 30, 0] }}
           transition={{ duration: 4, repeat: Infinity }}
         />
         <motion.div
-          className="absolute bottom-20 right-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl"
+          className="absolute bottom-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl"
           animate={{ y: [0, -30, 0] }}
           transition={{ duration: 5, repeat: Infinity }}
         />
@@ -342,7 +386,7 @@ export default function Index() {
           >
             <motion.h1
               variants={itemVariants}
-              className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent leading-tight"
+              className="text-5xl md:text-7xl font-bold mb-6 text-foreground leading-tight"
             >
               Protect Your Business from Cyber Threats
             </motion.h1>
