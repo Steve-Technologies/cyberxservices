@@ -5,16 +5,16 @@ import { createServer } from "./server";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  root: "client",   // 👈 IMPORTANT
   server: {
     host: "::",
-    port: 8080,
     fs: {
-      allow: ["./client", "./shared"],
+      allow: [".."], // allow project root safely
       deny: [".env", ".env.*", "*.{crt,pem}", "**/.git/**", "server/**"],
     },
   },
   build: {
-    outDir: "dist/spa",
+    outDir: "../dist/spa", // since root is now /client
   },
   plugins: [react(), expressPlugin()],
   resolve: {
