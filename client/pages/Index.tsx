@@ -35,6 +35,8 @@ import {
   Cable,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ThemeToggle";
+import { useTheme } from "@/hooks/use-theme";
 import {
   LineChart,
   Line,
@@ -74,6 +76,7 @@ const AnimatedCounter = ({ end, duration = 2 }: { end: number; duration?: number
 };
 
 export default function Index() {
+  const { theme } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
@@ -263,8 +266,9 @@ export default function Index() {
               ))}
             </div>
 
-            {/* CTA Button */}
-            <div className="hidden md:block">
+            {/* Desktop Actions */}
+            <div className="hidden md:flex items-center gap-4">
+              <ThemeToggle />
               <Button
                 onClick={() => scrollToSection("contact")}
                 className="bg-secondary hover:bg-secondary/90"
@@ -273,13 +277,16 @@ export default function Index() {
               </Button>
             </div>
 
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 hover:bg-card rounded-lg"
-            >
-              {mobileMenuOpen ? <X /> : <Menu />}
-            </button>
+            {/* Mobile Actions */}
+            <div className="md:hidden flex items-center gap-2">
+              <ThemeToggle />
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="p-2 hover:bg-card rounded-lg"
+              >
+                {mobileMenuOpen ? <X /> : <Menu />}
+              </button>
+            </div>
           </div>
 
           {/* Mobile Menu */}
@@ -561,8 +568,9 @@ export default function Index() {
                 <div className="bg-card backdrop-blur-md p-8 rounded-lg h-full relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                   <motion.div
-                    className="text-white mb-4 relative z-10"
-                    whileHover={{ rotate: 10, scale: 1.1 }}
+                    className={`mb-4 relative z-10 ${
+                      theme === "light" ? "text-secondary" : "text-white"
+                    }`}
                   >
                     {service.icon}
                   </motion.div>
@@ -716,6 +724,8 @@ export default function Index() {
                     border: "1px solid hsl(var(--border))",
                     borderRadius: "8px",
                   }}
+                  wrapperStyle={{ outline: "none" }}
+                  cursor={false}
                 />
                 <Bar
                   dataKey="incidents"
