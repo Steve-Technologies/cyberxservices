@@ -33,10 +33,14 @@ import {
   Network,
   Cpu,
   Cable,
+  MessageCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { useTheme } from "@/hooks/use-theme";
+import { CyberXLogo } from "@/components/CyberXLogo";
+import { WhatsAppIcon } from "@/components/WhatsAppIcon";
+import CyberTeamImage from "../../public/cyber_security_team.jpg"
 import {
   LineChart,
   Line,
@@ -242,12 +246,7 @@ export default function Index() {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
-                <Shield className="w-5 h-5 text-primary-foreground" />
-              </div>
-              <span className="font-bold text-lg text-foreground">
-                CyberX Services
-              </span>
+              <CyberXLogo className="h-14 w-auto" />
             </div>
 
             {/* Desktop Menu */}
@@ -322,108 +321,108 @@ export default function Index() {
               backgroundImage: `url('https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1600&h=900&fit=crop')`,
             }}
           />
-          <div className="absolute inset-0 bg-background/60 mix-blend-multiply" />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-background/50 to-background/60" />
+          <div className="absolute inset-0 bg-black/45 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/40 to-black/45" />
         </div>
 
         {/* Floating Cybersecurity Icons */}
         <motion.div
-          className="absolute top-20 left-12 text-primary/40 opacity-60"
-          animate={{ y: [0, -30, 0], rotate: [0, 5, -5, 0] }}
-          transition={{ duration: 4, repeat: Infinity }}
+          className="absolute top-20 left-12 text-primary/30 opacity-80 drop-shadow-lg"
+          animate={{ y: [-50, 40, -50], x: [-30, 25, -30], rotate: [0, 12, -12, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         >
-          <Shield className="w-20 h-20" />
+          <Shield className="w-28 h-28" />
         </motion.div>
         <motion.div
-          className="absolute top-40 right-16 text-secondary/40 opacity-60"
-          animate={{ y: [0, 20, 0], rotate: [0, -5, 5, 0] }}
-          transition={{ duration: 5, repeat: Infinity }}
+          className="absolute top-40 right-16 text-secondary/30 opacity-80 drop-shadow-lg"
+          animate={{ y: [30, -45, 30], x: [25, -30, 25], rotate: [0, -15, 15, 0] }}
+          transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
         >
-          <Lock className="w-16 h-16" />
+          <Lock className="w-24 h-24" />
         </motion.div>
         <motion.div
-          className="absolute bottom-32 left-1/4 text-primary/40 opacity-60"
-          animate={{ y: [0, 25, 0], x: [0, 10, 0] }}
-          transition={{ duration: 4.5, repeat: Infinity }}
+          className="absolute bottom-32 left-1/4 text-primary/30 opacity-80 drop-shadow-lg"
+          animate={{ y: [-40, 35, -40], x: [40, -35, 40], rotate: [0, 18, -18, 0] }}
+          transition={{ duration: 5.8, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
         >
-          <Code2 className="w-14 h-14" />
+          <Code2 className="w-24 h-24" />
         </motion.div>
         <motion.div
-          className="absolute top-1/3 right-1/4 text-secondary/40 opacity-60"
-          animate={{ y: [0, -25, 0], rotate: [0, 8, -8, 0] }}
-          transition={{ duration: 5.5, repeat: Infinity }}
+          className="absolute top-1/3 right-1/4 text-secondary/30 opacity-80 drop-shadow-lg"
+          animate={{ y: [-35, 50, -35], x: [-40, 30, -40], rotate: [0, 15, -15, 0] }}
+          transition={{ duration: 6.2, repeat: Infinity, ease: "easeInOut", delay: 0.7 }}
         >
-          <AlertTriangle className="w-16 h-16" />
+          <AlertTriangle className="w-26 h-26" />
         </motion.div>
         <motion.div
-          className="absolute bottom-20 right-1/3 text-primary/40 opacity-60"
-          animate={{ y: [0, 15, 0], x: [0, -15, 0] }}
-          transition={{ duration: 4.2, repeat: Infinity }}
+          className="absolute bottom-20 right-1/3 text-primary/30 opacity-80 drop-shadow-lg"
+          animate={{ y: [50, -45, 50], x: [-50, 40, -50], rotate: [0, -20, 20, 0] }}
+          transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
         >
-          <Zap className="w-16 h-16" />
+          <Zap className="w-24 h-24" />
         </motion.div>
         <motion.div
-          className="absolute top-2/3 left-1/3 text-secondary/40 opacity-60"
-          animate={{ y: [0, -20, 0], rotate: [0, -6, 6, 0] }}
-          transition={{ duration: 5.2, repeat: Infinity }}
+          className="absolute top-2/3 left-1/3 text-secondary/30 opacity-80 drop-shadow-lg"
+          animate={{ y: [-45, 30, -45], x: [35, -40, 35], rotate: [0, -16, 16, 0] }}
+          transition={{ duration: 6.3, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
         >
-          <Cloud className="w-14 h-14" />
+          <Cloud className="w-22 h-22" />
         </motion.div>
         <motion.div
-          className="absolute top-1/4 left-1/3 text-primary/40 opacity-60"
-          animate={{ y: [0, 20, 0], rotate: [0, -8, 8, 0] }}
-          transition={{ duration: 4.8, repeat: Infinity }}
+          className="absolute top-1/4 left-1/3 text-primary/30 opacity-80 drop-shadow-lg"
+          animate={{ y: [40, -50, 40], x: [-35, 45, -35], rotate: [0, -18, 18, 0] }}
+          transition={{ duration: 6.1, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
         >
-          <Database className="w-14 h-14" />
+          <Database className="w-24 h-24" />
         </motion.div>
         <motion.div
-          className="absolute bottom-1/3 right-1/4 text-secondary/40 opacity-60"
-          animate={{ y: [0, -15, 0], x: [0, 12, 0] }}
-          transition={{ duration: 5.3, repeat: Infinity }}
+          className="absolute bottom-1/3 right-1/4 text-secondary/30 opacity-80 drop-shadow-lg"
+          animate={{ y: [-30, 45, -30], x: [45, -50, 45], rotate: [0, 14, -14, 0] }}
+          transition={{ duration: 5.9, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
         >
-          <Key className="w-14 h-14" />
+          <Key className="w-22 h-22" />
         </motion.div>
         <motion.div
-          className="absolute top-1/2 left-1/6 text-primary/40 opacity-60"
-          animate={{ y: [0, 22, 0], rotate: [0, 5, -5, 0] }}
-          transition={{ duration: 4.6, repeat: Infinity }}
+          className="absolute top-1/2 left-1/6 text-primary/30 opacity-80 drop-shadow-lg"
+          animate={{ y: [-50, 35, -50], x: [30, -40, 30], rotate: [0, 10, -10, 0] }}
+          transition={{ duration: 6.4, repeat: Infinity, ease: "easeInOut", delay: 0.1 }}
         >
-          <Server className="w-12 h-12" />
+          <Server className="w-20 h-20" />
         </motion.div>
         <motion.div
-          className="absolute bottom-1/4 left-1/2 text-secondary/40 opacity-60"
-          animate={{ y: [0, -18, 0], x: [0, -10, 0] }}
-          transition={{ duration: 5.1, repeat: Infinity }}
+          className="absolute bottom-1/4 left-1/2 text-secondary/30 opacity-80 drop-shadow-lg"
+          animate={{ y: [35, -48, 35], x: [-45, 38, -45], rotate: [0, -14, 14, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.9 }}
         >
-          <Network className="w-14 h-14" />
+          <Network className="w-22 h-22" />
         </motion.div>
         <motion.div
-          className="absolute top-1/3 right-1/3 text-primary/40 opacity-60"
-          animate={{ y: [0, 18, 0], rotate: [0, -7, 7, 0] }}
-          transition={{ duration: 4.7, repeat: Infinity }}
+          className="absolute top-1/3 right-1/3 text-primary/30 opacity-80 drop-shadow-lg"
+          animate={{ y: [-42, 42, -42], x: [40, -45, 40], rotate: [0, -12, 12, 0] }}
+          transition={{ duration: 5.7, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
         >
-          <Eye className="w-12 h-12" />
+          <Eye className="w-20 h-20" />
         </motion.div>
         <motion.div
-          className="absolute bottom-2/3 right-1/6 text-secondary/40 opacity-60"
-          animate={{ y: [0, -22, 0], rotate: [0, 6, -6, 0] }}
-          transition={{ duration: 5.4, repeat: Infinity }}
+          className="absolute bottom-2/3 right-1/6 text-secondary/30 opacity-80 drop-shadow-lg"
+          animate={{ y: [-38, 48, -38], x: [-48, 42, -48], rotate: [0, 16, -16, 0] }}
+          transition={{ duration: 6.2, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
         >
-          <Terminal className="w-12 h-12" />
+          <Terminal className="w-20 h-20" />
         </motion.div>
         <motion.div
-          className="absolute top-2/3 right-1/3 text-primary/40 opacity-60"
-          animate={{ y: [0, 20, 0], x: [0, 15, 0] }}
-          transition={{ duration: 4.9, repeat: Infinity }}
+          className="absolute top-2/3 right-1/3 text-primary/30 opacity-80 drop-shadow-lg"
+          animate={{ y: [45, -42, 45], x: [-42, 46, -42], rotate: [0, 11, -11, 0] }}
+          transition={{ duration: 5.9, repeat: Infinity, ease: "easeInOut", delay: 0.7 }}
         >
-          <Cpu className="w-12 h-12" />
+          <Cpu className="w-20 h-20" />
         </motion.div>
         <motion.div
-          className="absolute bottom-1/3 left-1/3 text-secondary/40 opacity-60"
-          animate={{ y: [0, -20, 0], rotate: [0, -5, 5, 0] }}
-          transition={{ duration: 5.2, repeat: Infinity }}
+          className="absolute bottom-1/3 left-1/3 text-secondary/30 opacity-80 drop-shadow-lg"
+          animate={{ y: [-48, 38, -48], x: [38, -48, 38], rotate: [0, -13, 13, 0] }}
+          transition={{ duration: 6.3, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
         >
-          <HardDrive className="w-14 h-14" />
+          <HardDrive className="w-22 h-22" />
         </motion.div>
 
         {/* Animated background elements */}
@@ -447,13 +446,13 @@ export default function Index() {
           >
             <motion.h1
               variants={itemVariants}
-              className="text-5xl md:text-7xl font-bold mb-6 text-foreground leading-tight"
+              className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-white"
             >
               Protect Your Business from Cyber Threats
             </motion.h1>
             <motion.p
               variants={itemVariants}
-              className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto"
+              className="text-lg md:text-xl mb-8 max-w-2xl mx-auto text-white/90"
             >
               Expert cybersecurity consulting to safeguard your digital assets,
               ensure compliance, and build resilient security posture. Stay ahead
@@ -483,7 +482,7 @@ export default function Index() {
             </motion.div>
 
             {/* Hero stats */}
-            <motion.div
+            {/* <motion.div
               variants={itemVariants}
               className="mt-16 grid grid-cols-3 gap-8"
             >
@@ -523,7 +522,7 @@ export default function Index() {
                 </motion.div>
                 <p className="text-sm text-muted-foreground mt-2">Threat Prevention</p>
               </div>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
         </div>
       </section>
@@ -568,9 +567,7 @@ export default function Index() {
                 <div className="bg-card backdrop-blur-md p-8 rounded-lg h-full relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                   <motion.div
-                    className={`mb-4 relative z-10 ${
-                      theme === "light" ? "text-secondary" : "text-white"
-                    }`}
+                    className="mb-4 relative z-10 text-secondary"
                   >
                     {service.icon}
                   </motion.div>
@@ -805,32 +802,12 @@ export default function Index() {
               viewport={{ once: true }}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-lg blur-xl opacity-20" />
-              <div className="relative bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg p-12 border border-primary/20">
-                <motion.div
-                  className="space-y-6"
-                  animate={{ y: [0, 10, 0] }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                >
-                  <div className="bg-background/50 backdrop-blur rounded-lg p-6 border border-border">
-                    <p className="text-4xl font-bold text-primary mb-2">
-                      <AnimatedCounter end={500} />+
-                    </p>
-                    <p className="text-muted-foreground">Clients Protected</p>
-                  </div>
-                  <div className="bg-background/50 backdrop-blur rounded-lg p-6 border border-border">
-                    <p className="text-4xl font-bold text-secondary mb-2">
-                      <AnimatedCounter end={15} />+
-                    </p>
-                    <p className="text-muted-foreground">Years Experience</p>
-                  </div>
-                  <div className="bg-background/50 backdrop-blur rounded-lg p-6 border border-border">
-                    <p className="text-4xl font-bold text-primary mb-2">
-                      <AnimatedCounter end={99} />%
-                    </p>
-                    <p className="text-muted-foreground">Threat Prevention</p>
-                  </div>
-                </motion.div>
-              </div>
+              <img
+                src={CyberTeamImage}
+                alt={"SOC Operations Center - CyberX Services"}
+                className="relative w-full h-full object-cover rounded-lg border border-border shadow-2xl"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-lg" />
             </motion.div>
           </motion.div>
         </div>
@@ -967,15 +944,34 @@ export default function Index() {
               >
                 <h3 className="font-semibold mb-4">Follow Us</h3>
                 <div className="flex gap-4">
-                  {[Facebook, Linkedin, Twitter, Instagram].map((Icon, i) => (
-                    <a
-                      key={i}
-                      href="#"
-                      className="w-10 h-10 bg-card border border-border rounded-lg flex items-center justify-center hover:border-primary hover:scale-110 hover:rotate-10 transition transform"
-                    >
-                      <Icon className="w-5 h-5" />
-                    </a>
-                  ))}
+                  <a
+                    href="#"
+                    className="w-10 h-10 bg-[#1877F2] rounded-lg flex items-center justify-center hover:bg-[#1877F2]/80 text-white hover:scale-110 hover:rotate-10 transition transform"
+                    title="Facebook"
+                  >
+                    <Facebook className="w-5 h-5" />
+                  </a>
+                  <a
+                    href="#"
+                    className="w-10 h-10 bg-[#0A66C2] rounded-lg flex items-center justify-center hover:bg-[#0A66C2]/80 text-white hover:scale-110 hover:rotate-10 transition transform"
+                    title="LinkedIn"
+                  >
+                    <Linkedin className="w-5 h-5" />
+                  </a>
+                  <a
+                    href="#"
+                    className="w-10 h-10 bg-[#1DA1F2] rounded-lg flex items-center justify-center hover:bg-[#1DA1F2]/80 text-white hover:scale-110 hover:rotate-10 transition transform"
+                    title="Twitter"
+                  >
+                    <Twitter className="w-5 h-5" />
+                  </a>
+                  <a
+                    href="#"
+                    className="w-10 h-10 bg-gradient-to-tr from-[#FE7939] via-[#E1306C] to-[#C13584] rounded-lg flex items-center justify-center hover:opacity-80 text-white hover:scale-110 hover:rotate-10 transition transform"
+                    title="Instagram"
+                  >
+                    <Instagram className="w-5 h-5" />
+                  </a>
                 </div>
               </motion.div>
             </div>
@@ -1061,10 +1057,7 @@ export default function Index() {
           >
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
-                  <Shield className="w-5 h-5 text-primary-foreground" />
-                </div>
-                <span className="font-bold text-foreground">CyberX Services</span>
+                <CyberXLogo className="h-12 w-auto" />
               </div>
               <p className="text-muted-foreground text-sm">
                 Protecting businesses from cyber threats with expert solutions.
@@ -1122,11 +1115,36 @@ export default function Index() {
             viewport={{ once: true }}
           >
             <p className="text-center text-muted-foreground text-sm">
-              Copyright © 2026 CyberX Services. All rights reserved.
+              Copyright © {new Date().getFullYear()} CyberX Services. All rights reserved. | Powered by{" "}
+              <a
+                href="https://stevetechnologies.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:text-primary/80 transition-colors"
+              >
+                Steve Group of Companies
+              </a>
             </p>
           </motion.div>
         </div>
       </footer>
+
+      {/* Floating WhatsApp Button */}
+      <button
+        onClick={() => {
+          const message = encodeURIComponent(
+            "Hi Team CyberX,\nI have a query"
+          );
+          window.open(
+            `https://wa.me/918921731931?text=${message}`,
+            "_blank"
+          );
+        }}
+        className="fixed bottom-8 right-8 z-40 bg-green-500 hover:bg-green-600 text-white p-2 rounded-full shadow-lg transition-all hover:scale-110"
+        aria-label="Chat on WhatsApp"
+      >
+        <WhatsAppIcon className="w-10 h-10" />
+      </button>
     </div>
   );
 }
