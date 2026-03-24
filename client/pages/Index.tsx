@@ -246,7 +246,7 @@ export default function Index() {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <div className="flex items-center gap-2">
-              <CyberXLogo className="h-14 w-auto" />
+              <CyberXLogo className="h-20 w-auto" />
             </div>
 
             {/* Desktop Menu */}
@@ -257,7 +257,7 @@ export default function Index() {
                   onClick={() =>
                     scrollToSection(item.toLowerCase())
                   }
-                  className="text-sm hover:text-primary transition relative group"
+                  className="text-lg hover:text-primary transition relative group"
                 >
                   {item}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary group-hover:w-full transition-all duration-300" />
